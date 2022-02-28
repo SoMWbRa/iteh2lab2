@@ -6,8 +6,8 @@ if(isset($_GET['department'])) {
 
     $cursor = $coll->distinct("nurse", array('department' => $_GET['department']));
 
-    foreach ($cursor as $row) {
-        echo $row."<br>";
-    }
+    $key = $_GET['department'];
+
+    include "output.php";
 
 }

@@ -6,9 +6,10 @@ if(isset($_GET['shift'], $_GET['department'])) {
 
     $cursor = $coll->distinct("nurse", array('shift' => $_GET['shift'], 'department' => $_GET['department']));
 
-    foreach ($cursor as $row) {
-        echo $row."<br>";
-    }
+    $key = $_GET['shift'].$_GET['department'];
+
+    echo $key;
+    include "output.php";
 
 
 }

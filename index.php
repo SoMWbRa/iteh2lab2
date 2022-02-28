@@ -26,7 +26,7 @@
 
 <form action="nurse_in_dep.php">
     <p> Медсестры отделения
-        <select name="department">
+        <select name="department" id="2" onchange="onChange(2)">
             <?php
             include "conn.php";
             $res = $coll->distinct("department");
@@ -40,7 +40,7 @@
 
 <form action="name_shift.php">
     <p> Дежурства (в любых палатах) в смену:
-        <select name="shift">
+        <select name="shift" id="3" onchange="onChange(3)">
             <?php
             include "conn.php";
             $res = $coll->distinct("shift");
@@ -48,7 +48,7 @@
                 echo "<option>$row</option>"
             ?>
         </select> в отделение
-        <select name="department">
+        <select name="department" id="4" onchange="onChange(4)">
             <?php
             include "conn.php";
             $res = $coll->distinct("department");
