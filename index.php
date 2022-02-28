@@ -6,12 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src=locStorage.js> </script>
 </head>
-<body>
+<body onload="onLoad()">
 <h3> Запросы </h3>
 <form action="fid_ward.php" method="get">
     <p> Перечень палат, в которых дежурит медсестра
-        <select name="nurse_name">
+        <select name="nurse_name" id="1" onchange="onChange(1)">
             <?php
             include "conn.php";
             $res = $coll->distinct("nurse");
@@ -59,5 +60,12 @@
     </p>
 </form>
 
+<h3>Local Storage Date</h3>
+<?php
+echo '<table id="showTable" style="text-align:center; border-spacing: 20px;">';
+echo '<tr>';
+echo '</tr>';
+echo '</table>';
+?>
 </body>
 </html>
